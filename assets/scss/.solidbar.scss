@@ -1,0 +1,129 @@
+@import "_mixins.scss";;
+
+body > section.body{
+  .solidbar_container{
+
+    &,> .solidbar_painel{
+      margin: 0;
+      padding: 1rem 0;
+      border: none;
+      background: transparent;
+    }
+
+    border-bottom: 16px solid transparent;
+    margin-bottom: .5em;
+
+    p,
+    br,
+    painel{
+      display: none !important;
+    }
+
+    > input[type=radio]{
+      position: absolute;
+      left: -101vw;      
+      opacity: 0;
+    }
+
+    > .solidbar_bar{
+      white-space: nowrap;
+      display: block;
+      background: rgba(0,0,0,.8);
+      padding: 0;
+      line-height: 0;
+      margin: 1.5rem 0;
+      margin-bottom: 0;
+      height: 2.5rem;
+      width: 100%;
+      vertical-align: middle;
+      font-size: 0;
+
+      @include border-radius(.15rem);
+
+      &,*{
+        color: rgba(255,255,255,.9);
+      }
+
+      > *{
+        font-size: 1rem;
+
+        &:not(:first-of-type){
+          border-left: 1px solid rgba(255,255,255,.1);
+        }
+      }
+
+      > label,>.solidbar_box,>*{
+        display: inline-block;
+        height: 2.36em !important;
+        min-height: 2.36em !important;
+        max-height: 2.36em !important;
+        padding: 0 .4em;
+
+        > i{
+          margin: .5em .5em -.25em .5em;
+          min-height: 1.25em;
+        }
+
+        .content{
+          margin: 0;
+          padding: 0 .5em;
+          font-size: .9rem;
+        }
+      }
+
+      > *{
+        white-space: nowrap;
+
+        & > *{
+          display: inline-block;
+        }
+
+        &,*{
+          vertical-align: baseline;
+        }
+      }
+
+      > *[for]{
+        cursor: pointer;
+
+        &:hover{
+          background: rgba(255,255,255,.05);
+        }
+
+        &:after{
+          content: " ";
+          display: block;
+          width: 0;
+          height: 0;
+          margin-left: calc(50% - 12px);
+
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-bottom: 12px solid transparent;
+          border-top: 12px solid transparent;
+
+          margin-top: .64em;
+          margin-bottom: calc(-1.5em - 16px);
+        }
+      }
+    }
+
+    > .solidbar_painel{
+      display: none;
+      margin: .5rem 0;
+    }
+
+    @for $i from 0 through 10{
+      > input[type=radio][ndc='#{$i}']:checked ~ .solidbar_bar > label[ndc='#{$i}']{
+        &:after{
+          border-top-color: rgba(0,0,0,.8);
+        }
+      }
+
+      > input[type=radio][ndc='#{$i}']:checked ~ .solidbar_painel[ndc='#{$i}']{
+        display: block;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,249 @@
+body > section.body{
+  section{
+    .wp-block-jcem-query{
+      margin-bottom: 2.5em;
+      width: 100%;
+    }
+
+    > .colunabarra,
+    > .wp-block-jcem-query,
+    &{            
+      h2.blocktitle,
+      > h2, > h3, >h4{
+        > span,
+        > div{
+          font-size: .8em;
+          display: inline-block;
+          background: rgba(0,0,0,.7) !important;
+          color: #fff;
+          padding: .5em .1em;
+          float: left;
+          height: 2.38em;          
+
+          &,>div,>span{
+            > i{
+              &,*{
+                &,&:before,&:after{
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        &,:before, &:after{
+          white-space: nowrap;
+        }
+
+        &:before, &:after{
+          content: " ";
+          width: 0;
+          height: 0;
+
+          border-left: .97em solid transparent;
+          border-right: .97em solid transparent;
+          border-bottom: .97em solid transparent;
+          border-top: .97em solid transparent;
+        }
+
+        &:not(.interno){
+          &:before{
+            float: left;
+            display: block;
+
+            border-right-color: rgba(0,0,0,.7);
+            border-bottom-color: rgba(0,0,0,.7);
+          }
+
+          &:after{
+            display: inline-block;
+            border-left-color: rgba(0,0,0,.7);
+            border-top-color: rgba(0,0,0,.7);
+          }
+        }
+
+        &.interno{
+          font-size: .9em;
+          z-index: 1;
+          border: none !important;
+          margin-bottom: -4.5em;          
+          bottom: -1em;                   
+          
+          > span,
+          > div{
+            display: block;
+            background: #4f4f4f;
+            padding: .8em 1.2em 1.85em 2.2em;
+            border-right: 1em solid #2b92db;
+            text-transform: uppercase !important;
+            line-height: 1em;
+            
+            *{
+              color: #fff;
+            }
+
+            @include border-radius(.2em, 0, 0, 0);
+            @include box-shadow(.15em, .3em, .3em, rgba(0,0,0,.5));
+          }
+
+          &:before{
+            display: none;
+          }
+
+          &:after{
+            font-size: .6em;
+            display: block;
+            border-right-color: #444;
+            border-top-color: #444;
+            clear: both;
+          }
+
+          & + * + .painel.interno,
+          & + .painel.interno{
+            padding-top: 4em !important;
+          }
+        }
+
+        &:first-of-type{
+          margin-top: 0 !important;
+        }
+      }
+
+      .blocktitle.interno{
+        margin-left: -1.12em;
+      }
+    }
+
+    .articles_items{
+      padding: 1em .2em;
+      margin: 1em 0;
+
+      > h1{
+        display: block;
+      }
+
+      > div,
+      &{
+        > article,
+        > a.article{
+          display: table;
+          margin: 1.5em 0 !important;
+          text-decoration: none;
+          z-index: 0;
+
+          &:first-of-type{
+            margin-top: 0 !important;
+          }
+
+          @include clearfix;
+
+          > div.thumb.cover{
+            float: left;
+            width: 30%;
+            height: 0%;
+
+            min-width: 3em;
+            background: rgba(255,255,255,.3);
+            overflow: hidden;
+
+            > div.img{
+              background-size: cover;
+              background-position: center center;
+              background-repeat: no-repeat;
+
+              width: 100%;
+              padding-bottom: 53%;
+            }
+          }
+
+          > h1,>div.content{
+            margin-left: calc(30% + .5em);
+          }
+
+          >h1{
+            font-size: .8rem;
+            margin-top: 0;
+          }
+          >div.content{
+            font-size: .75em;
+            text-align: left !important;
+          }
+        }
+      }
+    }
+
+    .articles_items,
+    h1,h2,h3,h4,h5,h6,h7{
+      &.blocktitle,
+      &.painel{
+        &.painel,
+        & + .articles_items{
+          @include border-radius(.3em);
+          @include box-shadow(0,0,0,transparent);
+          border: 1px solid rgba(0,0,0,.2);
+          padding: 0;
+
+          > div,
+          &{
+            > article,
+            > a.article{
+              padding: .7em .5em;
+
+              margin: 0 !important;
+              border-left: .3em solid transparent;
+              border-right: .3em solid transparent;
+
+              border-top: 1px solid rgba(0,0,0,.2);
+
+              &:last-of-type{
+                border-bottom: 1px solid rgba(0,0,0,.2);
+              }
+
+              &:hover{
+                border-left: .3em solid #2b92db;
+
+                &,*{
+                  color: #2b92db;
+                }
+              }
+
+              > div.thumb.cover{
+                max-height: 2.85em;
+                width: 3em;
+                @include border-radius(.2em);
+                background: rgba(0,0,0,.03);
+              }
+
+              > h1,>div.content{
+                margin-left: calc(4.3em);
+              }
+
+              > h1{
+                border-color: transparent;
+
+                &,*{
+                  color: #555;
+                }
+              }
+
+              >div.content{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .wp-block-jcem-query{
+      &, >*{
+        /* https://stackoverflow.com/questions/7785374/how-to-prevent-column-break-within-an-element */
+        -webkit-column-break-inside: avoid !important; /* Chrome, Safari */
+        page-break-inside: avoid !important;           /* Theoretically FF 20+ */
+        break-inside: avoid-column !important;         /* IE 11 */
+        display: block;                      /* Actually FF 20+ */
+        width: 100%;
+      }
+    }
+  }
+}

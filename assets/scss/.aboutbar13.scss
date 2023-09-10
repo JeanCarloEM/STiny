@@ -1,0 +1,232 @@
+@import "_mixins.scss";
+@import "_variaveis.scss";
+
+.about-bar{
+  font-size: .89em;
+  padding: 0 .3em;
+  clear: both;
+
+  &,*{
+    color: #fff;
+  }
+
+  p{
+    text-indent: 0 !important;
+  }
+
+  > .columns3{
+    float: right;
+    width: 66%;
+    &,> *{
+      font-size: .97em;
+    }
+    padding-top: .5em;
+
+    > *{
+      display: block;
+      float: left;
+      min-height: 100%;
+      max-width: calc(33.33% - 1.8em - 1px);
+      margin: .5em;
+      padding: 1.3em;
+      border-left: 1px solid rgba(255,255,255,.3);
+
+      > div{
+        font-size: .98em;
+      }
+
+      &:first-of-type{
+        border-left-color: transparent;
+      }
+
+      &,*{
+        text-align: center !important;
+      }
+
+      h1,h2,h3,h4,h5,h6,i{
+        display: block;
+        text-align: center !important;
+        padding-bottom: .3em;
+        border-bottom-color: transparent;
+        color: #00fffc;
+        margin-bottom: 1.5em;
+        text-transform: capitalize !important;
+
+        &:before,&:after{
+          display: block;
+          margin-top: -.5em;
+          margin-bottom: .7em;
+          font-size: 2.5em;
+          color: #00fffc;
+        }
+
+        &:after{
+          display: none;
+        }
+      }
+
+      &:hover{
+        &,*{
+          color: #fff;
+        }
+      }
+    }
+
+    > a{
+      text-decoration: none !important;
+      cursor: pointer;
+
+      &:after{
+        display: block;
+        padding-top: 1.7em !important;
+        text-align: center;
+      }
+
+      &[href]{
+        &:hover{
+          &:after{
+            color: #00fffc
+          }
+        }
+      }
+
+      &:not([href]){
+        cursor: default;
+        
+        &:after{
+          display: none;
+        }
+      }
+    }
+
+    i{
+      padding-bottom: 0 !important;
+      margin-top: 2.5em;
+    }
+
+    @include media(920px, TRUE, max){
+      &{
+        float: none !important;
+        margin: 1em 0 !important;
+        padding: 0 !important;
+        width: 100%;
+
+        > *{
+          display: block;
+          float: none !important;
+          width: 100%;
+          max-width: 100%;
+          border-left-color: transparent;
+          margin: .5em 0;
+          padding-left: 5em;
+
+          &:after{
+            display: none !important;
+          }
+
+          &, *{
+            text-align: left !important;
+          }
+
+          h1,h2,h3,h4,h5,h6,i{
+            margin-bottom: .2em !important;
+            text-align: left !important;
+            margin-top: .5em;
+
+            &:before, &:after{
+              margin-left: -1.4em;
+              margin-top: 0;
+              position: absolute;
+              padding-top: .2em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  > .about{
+    margin: 0 66% 0 0;
+    padding: 3em 2em;
+    padding-top: 1em;
+    width: calc(34% - 1em);
+    height: 35%;
+    min-height: 192px;
+    background: rgba(0,0,0,.3);
+
+    clear: none;
+
+    &, div, p{
+      text-align: left !important;
+    }
+
+    a{
+      padding: .3em;
+      border: 1px solid #00fffc;
+      margin-top: 1em;
+      display: block;
+      text-align: center !important;
+      cursor: pointer;
+
+      text-decoration: none;
+
+      &:not([href]){
+        display: none;
+      }
+
+      &:hover{
+        background: #00fffc;
+        color: #000;
+      }
+    }
+
+    i{
+      &:before,&:after{
+        background: #5e8393;
+        position: absolute;
+        top: 1em;
+        font-size: 2em;
+        display: block;
+        color: #00fffc;
+      }
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      padding-left: 2em;
+      border-bottom-color: transparent;
+      color: #00fffc;
+      margin-bottom: 1em;
+    }
+
+    @include media(920px, TRUE, max){
+      margin: 0;
+      width: 100%;
+      background: transparent;
+      padding: 0 1em;
+      padding-bottom: 2em;
+
+      &, div, p, *{
+        text-align: justify !important;
+      }
+
+      i{
+        &:before,&:after{
+          top: 1.3em;
+          left: .2em;
+        }
+      }
+
+      h1,h2,h3,h4,h5,h6{
+        padding: .5em !important;
+        padding-left: 2em !important;
+        background: rgba(0,0,0,.1);
+      }
+    }
+  }
+
+  a:after{
+    content: '\f35d';
+    color: #fff;
+    padding: .5em;
+  }
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,SAAS,CACP,OAAO,CAAE,IAAI",
+"sources": ["../scss/.query.scss"],
+"names": [],
+"file": ".query.css"
+}

@@ -1,0 +1,120 @@
+body{
+  ul > li > a, .social a, .social div,
+  .icon a, .icon div,
+  .icon > div.btb > div,
+  .icon > div.ico > div{
+    cursor: pointer;
+
+    &.before:after{
+      display: none;
+    }
+
+    &.smallico{
+      &:not(.before):after, &.before:before{
+        font-size: 29px;
+      }
+    }
+
+    &.contato{
+      &:not(.before):after, &.before:before{
+        content: "\f3fe";
+      }
+    }
+    &.aboutme{
+      &:not(.before):after, &.before:before{
+        margin-top: .04em !important;
+        content: "\f2bd";
+        font-family:"Font Awesome 5 Free";
+        font-weight:900;
+      }
+    }
+    &.wordpress{
+      &:not(.before):after, &.before:before{
+        content: "\f411";
+      }
+    }
+    &.github{
+      &:not(.before):after, &.before:before{
+        content: "\f09b";
+      }
+    }
+
+    &.facebook{
+      &:not(.before):after, &.before:before{
+        content: "\f09a";
+      }
+    }
+
+    &.twitter{
+      &:not(.before):after, &.before:before{
+        content: "\f099";
+      }
+    }
+
+    &.linkedin{
+      &:not(.before):after, &.before:before{
+        content: "\f08c";
+      }
+    }
+
+    &.flickr{
+      &:not(.before):after, &.before:before{
+        content: "\f16e";
+      }
+    }
+
+    &.youtube{
+      &:not(.before):after, &.before:before{
+        content: "\f167";
+      }
+    }
+
+    &.instagram{
+      &:not(.before):after, &.before:before{
+        content: "\f16d";
+      }
+    }
+
+    &.pinterest{
+      &:not(.before):after, &.before:before{
+        content: "\f0d3";
+      }
+    }
+
+    &.reddit{
+      &:not(.before):after, &.before:before{
+        content: "\f1a2";
+      }
+    }
+
+    &.vimeo{
+      &:not(.before):after, &.before:before{
+        content: "\f27d";
+      }
+    }
+
+    &.tumblr{
+      &:not(.before):after, &.before:before{
+        content: "\f174";
+      }
+    }
+
+    &,&:visited{
+      &:not(.before):after, &.before:before{
+        color: #555;
+      }
+    }
+
+    &:hover{
+      &:not(.before):after, &.before:before{
+        color: $cor_headermaster_over;
+      }
+    }
+
+    &:active{
+      &:not(.before):after, &.before:before{
+        color: $cor_headermaster_active;
+      }
+    }
+  }
+}

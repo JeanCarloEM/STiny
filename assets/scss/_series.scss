@@ -1,0 +1,44 @@
+article.post{
+  div.seriesbox{
+    margin: .5rem 1rem;
+    z-index: 1;
+
+    > div,h2,h43,h4,h5{
+      > a{
+        font-size: 1.2em;
+      }
+    }
+
+    ol,ul{
+      > ol, >ul{
+        display: none;
+        list-style: none !important;
+        
+        &,*{
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+        }
+      }
+    }
+
+    > ol,> ul{
+      > ol, >ul{
+        &,*{
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+        }
+      }
+
+      list-style-type: upper-roman;
+      margin-left: 1.5rem !important;
+
+      &,*{
+        text-align: left !important;
+      }
+
+      li{
+        padding-left: .5rem !important;
+      }
+    }
+  }
+}

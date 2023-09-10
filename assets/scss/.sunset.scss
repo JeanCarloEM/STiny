@@ -1,0 +1,58 @@
+@import "_mixins.scss";
+
+body > section.body{
+  .sunset_box{
+    *{
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    > i{
+      font-size: .9rem;
+      height: 1.5em;
+      overflow-y: hidden;
+      border-bottom: 1.5px solid rgba(255,255,255,.9);
+      padding: 0 .4em;
+      margin: .5em .5em -.25em .5em;
+      padding-top: .55em;
+
+      &:before{
+        font-size: 1.8em;
+        color: yellow;
+      }
+
+      &:after{
+        position: absolute;
+        top: 0;
+        left: -.4em;
+        margin-left: calc(50%);
+
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        margin-bottom: -.5em;
+        font-size: .9em;
+
+        border-left: .4em solid transparent;
+        border-right: .4em solid transparent;
+        border-bottom: .4em solid transparent;
+        border-top: .4em solid rgba(255,255,255,.8);
+      }
+    }
+
+    > .sunset_caption{
+      white-space: nowrap;
+      &,*{
+        font-size: .75rem;
+        display: inline-block;
+        color: rgba(255,255,255,.6);
+        text-transform: uppercase;
+        margin-right: .5em;
+      }
+    }
+
+    > .sunset{
+    }
+  }
+}
